@@ -1,9 +1,12 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const cleanCSS = require('gulp-clean-css');
 
-function testeGulp(cb) {
-    console.log('Gulp está funcionando!');
-    cb();
+function styles() {
+    return gulp.src('src/styles/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('dist/css'));
 }
 
-exports.default = testeGulp;
+exports.default = styles;
