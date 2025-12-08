@@ -1,0 +1,25 @@
+{
+  "name": "clone_disney_plus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhonyOwner/clone_disney_plus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JhonyOwner/clone_disney_plus/issues"
+  },
+  "homepage": "https://github.com/JhonyOwner/clone_disney_plus#readme",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-sass": "^6.0.1"
+  }
+}
