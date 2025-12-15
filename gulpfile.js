@@ -1,15 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
-const imageminModule = require('gulp-imagemin');
-const imagemin = imageminModule && imageminModule.default ? imageminModule.default : imageminModule;
-
-// Keep gulp.src binary-safe by default to avoid image corruption
-const _gulpSrc = gulp.src;
-gulp.src = function(glob, opts) {
-    const safeOpts = Object.assign({}, { encoding: false }, opts);
-    return _gulpSrc.call(gulp, glob, safeOpts);
-};
+const imagemin = require('gulp-imagemin');
 
 function styles() {
     return gulp.src('src/styles/**/*.scss')
