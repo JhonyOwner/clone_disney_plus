@@ -3,3 +3,43 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+$corDeFundo: #040714;
+$corTextoPtincipal: silver;
+$corTextoSecundario: #f9f9f9f9;
+
+body {
+    background-color: $corDeFundo;
+}
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: $corTextoPtincipal;
+}
+
+@mixin title($fontSize: 40px){
+    @include text($fontSize);
+    color: $corTextoSecundario;
+}
+
+.text--big {
+    @include text(18px);
+    @include title(44px);
+}
+
+.text--small {
+    @include text;
+    @include title;
+}
+
+.text--smaller {
+    @include text(12px);
+    @include title(28px);
+}
+
+.link-text{
+    @include text(18px);
+    color: $corTextoSecundario;
+    text-decoration: underline;
+}
