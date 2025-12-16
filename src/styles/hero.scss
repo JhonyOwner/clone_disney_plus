@@ -2,4 +2,21 @@
     padding: 5.6vw;
     min-height: 80vh;
     background-image: url(../images/hero_desktop.jpeg);
+
+    &__content {
+        max-width: 640px;
+        
+        &__branding {
+            max-width: 320px;
+            margin: 0 auto 38px;
+        }
+
+        .title {
+            margin-bottom: 64px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    }
 }

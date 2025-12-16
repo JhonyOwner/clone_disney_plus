@@ -30,12 +30,12 @@ body {
     @include title(44px);
 }
 
-.text--small {
+.text {
     @include text;
     @include title;
 }
 
-.text--smaller {
+.text--small {
     @include text(12px);
     @include title(28px);
 }
