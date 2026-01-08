@@ -21,6 +21,7 @@
 
 body {
     background-color: variaveis.$corDeFundo;
+    font-family: 'Avenir', sans-serif;
 }
 
 @mixin text($fontSize: 16px){
