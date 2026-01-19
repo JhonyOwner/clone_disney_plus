@@ -5,7 +5,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll("[data-tab-button]");
     const questions = document.querySelectorAll("[data-faq-question]");
 
-    // Repete para cada botão da lista, um por um
+    const heroSection = document.querySelector(".hero");
+    const alturaHero = heroSection.clientHeight;
+
+    window.addEventListener("scroll", function() {
+        const posicaoAtual = window.scrollY;
+
+        if (posicaoAtual < alturaHero) {
+            ocultaElementosHeader();
+        } else {
+            exibeElementosHeader();
+        }
+    });
+
+
+    // Seção de atrações - quando a página rolar, executa a função
     for (let i = 0; i < buttons.length; i++) {
         // Quando alguém clica no botão, executa esta ação
         buttons[i].addEventListener('click', function(botao) {
@@ -23,12 +37,22 @@ document.addEventListener("DOMContentLoaded", function() {
             botao.target.classList.add("shows__tabs__button--is--active");
         })
     }
-
+    // Seção de FAQ - quando alguém clicar na pergunta, abre ou fecha a resposta
     for(let i = 0; i < questions.length; i++) {
         questions[i].addEventListener("click", abreOuFechaResposta);
     }       
 })
 
+function ocultaElementosHeader() {
+    const header = document.querySelector(".header");
+    header.classList.add("header--is--hidden");
+}
+function exibeElementosHeader() {
+    const header = document.querySelector(".header");
+    header.classList.remove("header--is--hidden");
+}
+
+// Função para abrir ou fechar a resposta da pergunta clicada
 function abreOuFechaResposta(elemento) {
     const classe = 'faq__questions__item--is--open';
     console.log(elemento);
