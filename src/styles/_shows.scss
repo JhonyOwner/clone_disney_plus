@@ -1,43 +1,101 @@
+// =====================================
+// _SHOWS.SCSS - ESTILOS DAS ABAS DE ATRAÇÕES
+// =====================================
+// Estilos para a seção de filmes e séries com abas (Em breve, Populares, Star+)
+
+// Importa as variáveis de cor
 @use 'variaveis';
 
+// ===== SEÇÃO SHOWS/ATRAÇÕES =====
+// Container principal da seção de filmes e séries
 .shows {
+    // Preenchimento interno (2vw em cima/baixo, 5.6vw esquerda/direita)
     padding: 2vw 5.6vw;
+    
+    // Altura mínima de 50% da altura da viewport
     min-height: 50vw;
 
+    // ===== LISTA DE ATRAÇÕES =====
+    // Exibe as imagens dos filmes/séries em grid
     &__list {
+        // Inicialmente oculta (display: none)
         display: none;
+        
+        // Grid com 3 colunas iguais
         grid-template-columns: 1fr 1fr 1fr;
+        
+        // Espaço entre os itens (24px)
         gap: 24px;
+        
+        // Margem acima da lista de filmes
         margin-top: 44px;
 
+        // ===== LISTA ATIVA =====
+        // Quando a aba está selecionada, exibe os filmes
         &--is--active {
+            // Muda para grid, mostrando os filmes
             display: grid;
         }
 
+        // ===== CADA ITEM DA LISTA =====
+        // Cada filme/série na grade
         &__item {
+            // ===== IMAGEM DO FILME =====
+            // Poster do filme
             img {
+                // Ocupar 100% da largura do container
                 max-width: 100%;
+                
+                // Bordas arredondadas (4px)
                 border-radius: 4px;
             }
         }
     }
 
+    // ===== ABAS (BOTÕES) =====
+    // Container para os botões de filtro (Em breve, Populares, Star+)
     &__tabs {
+        // Exibe os botões em linha
         display: flex;
+        
+        // Centraliza os botões na tela
         justify-content: center;
 
+        // ===== BOTÃO DE ABA =====
+        // Cada botão individual (Em breve, Populares, etc)
         &__button {
+            // Cor do texto (branco)
             color: variaveis.$corTextoSecundario;
+            
+            // Tamanho do texto
             font-size: 20px;
+            
+            // Remove a borda padrão do botão
             border: none;
+            
+            // Preenchimento na parte inferior
             padding-bottom: 5px;
-            background:none;
+            
+            // Remove fundo padrão do botão
+            background: none;
+            
+            // Texto em maiúsculas
             text-transform: uppercase;
+            
+            // Margem esquerda e direita
             margin: 0 1vw;
+            
+            // Cursor de apontar (indica que é clicável)
             cursor: pointer;
+            
+            // Borda inferior transparente de 5px (deixa espaço para a ativa)
             border-bottom: 5px solid transparent;
 
+            // ===== BOTÃO ATIVO =====
+            // Quando o botão está selecionado
             &--is--active {
+                // Adiciona uma borda branca na parte inferior
+                // Indicando que a aba está selecionada
                 border-color: variaveis.$corTextoSecundario;
             }
         }

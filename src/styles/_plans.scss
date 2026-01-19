@@ -1,38 +1,85 @@
+// =====================================
+// _PLANS.SCSS - ESTILOS DA SEÇÃO DE PLANOS
+// =====================================
+// Estilos para a seção que mostra os diferentes planos de assinatura
+
+// ===== SEÇÃO DE PLANOS =====
+// Container principal dos planos de assinatura
 .plans {
+    // Preenchimento interno (5.6% da viewport)
     padding: 5.6vw;
 
-    h2{
+    // ===== TÍTULO =====
+    // Título "Escolha seu plano"
+    h2 {
+        // Centraliza o título na tela
         text-align: center;
     }
 
+    // ===== LISTA DE PLANOS =====
+    // Container para os 3 planos (Disney+, Combo+, etc)
     &__list {
+        // Exibe os planos em linha (flex)
         display: flex;
+        
+        // Distribui o espaço igualmente entre os planos
         justify-content: space-around;
+        
+        // Margem no topo da lista
         margin-top: 50px;
 
+        // ===== CADA PLANO =====
+        // Estilo individual de cada plano
         &__item {
+            // Centraliza o texto dentro de cada plano
             text-align: center;
+            
+            // Preenchimento interno (60px acima, 44px na parte de baixo, 44px esquerda/direita)
             padding: 60px 44px 44px;
+            
+            // Largura máxima de cada plano
             max-width: 380px;
+            
+            // Ocupar 100% da largura disponível (dentro do max-width)
             width: 100%;
 
+            // ===== PLANO DO MEIO (COMBO+) =====
+            // O segundo plano (Combo+ Disney e Star+) tem um fundo especial
             &:nth-child(2) {
+                // Imagem de fundo decorativa
                 background-image: url(../images/fundo_combo_plus.png);
+                
+                // Não repetir a imagem
                 background-repeat: no-repeat;
+                
+                // Imagem contida dentro do espaço
                 background-size: contain;
             }
 
+            // ===== LOGO DO PLANO =====
+            // Imagem da logo (Disney+, Star+, etc)
             img {
+                // Altura de 86px
                 height: 86px;
             }
 
+            // ===== PREÇO =====
+            // Valor da assinatura em destaque
             strong {
+                // Cada preço em seu próprio bloco
                 display: block;
+                
+                // Margem acima do preço
                 margin-top: 24px;
             }
 
+            // ===== BOTÃO =====
+            // Botão "Assine agora" de cada plano
             .button {
+                // Margem acima do botão
                 margin-top: 2vw;
+                
+                // Margem abaixo do botão
                 margin-bottom: 8px;
             }
         }
@@ -40,7 +87,10 @@
         
     }
 
+    // ===== DISCLAIMER (PEQUENO TEXTO) =====
+    // Texto pequeno com observações sobre preços
     p {
+        // Centraliza o texto
         text-align: center;
     }
 }

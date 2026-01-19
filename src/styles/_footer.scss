@@ -1,82 +1,176 @@
+// =====================================
+// _FOOTER.SCSS - ESTILOS DO RODAPÉ
+// =====================================
+// Estilos para o rodapé (footer) do site com links, logo e seletor de idioma
+
+// Importa as variáveis de cor
 @use 'variaveis';
 
+// ===== SEÇÃO FOOTER =====
+// Container principal do rodapé
 .footer {
+    // Preenchimento interno (26px em cima/baixo, 8px esquerda/direita)
     padding: 26px 8px;
 
+    // ===== CONTAINER DO FOOTER =====
+    // Agrupa o conteúdo do footer
     &__container {
+        // Largura máxima para melhor organização
         max-width: 1024px;
+        
+        // Ocupa 50% da tela
         width: 50%;
+        
+        // Centraliza automaticamente
         margin: 0 auto;
+        
+        // Texto centralizado
         text-align: center;
+        
+        // Preenchimento abaixo
         padding-bottom: 20px;
     }
 
+    // ===== LOGO DO FOOTER =====
+    // Logo do Disney+ no footer
     &__logo {
+        // Largura da logo
         width: 80px;
+        
+        // Margem abaixo (nota: há um erro no original "margin-bottom: 0 auto 10px" deveria ser apenas margin)
         margin-bottom: 0 auto 10px;
     }
 
+    // ===== LINKS DO FOOTER =====
+    // Lista de links no rodapé
     &__links {
+        // Margem abaixo dos links
         margin-bottom: 20px;
+        
+        // Exibe os links em linha
         display: flex;
+        
+        // Alinha verticalmente ao centro
         align-items: center;
+        
+        // Permite quebra de linha dos links
         flex-wrap: wrap;
+        
+        // Centraliza os links na tela
         justify-content: center;
 
+        // ===== CADA LINK =====
+        // Estilo individual de cada link
         &__item {
+            // Exibe como bloco inline
             display: inline-block;
 
+            // ===== ÂNCORA (LINK) =====
+            // Estilo dos links
             a {
+                // Remove sublinhado padrão
                 text-decoration: none;
-                padding:6px 12px;
+                
+                // Preenchimento interno (6px em cima/baixo, 12px esquerda/direita)
+                padding: 6px 12px;
+                
+                // Cada link é um bloco
                 display: block;
 
+                // ===== HOVER (QUANDO PASSA O MOUSE) =====
+                // Efeito quando passa o mouse sobre o link
                 &:hover {
+                    // Cor muda para branca
                     color: variaveis.$corTextoSecundario;
                 }
             }
         }
     }
 
+    // ===== PARÁGRAFOS =====
+    // Texto no footer
     p {
+        // Margem abaixo de cada parágrafo
         margin-bottom: 12px;
     }
 }
 
+// ===== SELETOR DE IDIOMA =====
+// Dropdown para escolher o idioma
 .language__selector {
+    // Exibe o seletor em linha
     display: flex;
+    
+    // Alinha verticalmente ao centro
     align-items: center;
 
+    // ===== SETA DO SELETOR =====
+    // Seta que indica dropdown
     .arrow {
+        // Cor da seta
         color: variaveis.$corTextoPrincipal;
+        
+        // Dimensões pequenas
         width: 12px;
         height: 12px;
+        
+        // Seta não é clicável
         pointer-events: none;
     }
 
+    // ===== BANDEIRA DO PAÍS =====
+    // Imagem de bandeira
     img {
+        // Altura e largura iguais
         height: 18px;
         width: 18px;
+        
+        // Espaço à direita da bandeira
         margin-right: 8px;
     }
 
+    // ===== SELECT (DROPDOWN) =====
+    // Elemento select de idioma
     select {
+        // Cursor de apontar
         cursor: pointer;
+        
+        // Remove borda padrão
         border: none;
+        
+        // Remove foco padrão
         outline: none;
+        
+        // Remove sombra padrão
         box-shadow: none;
+        
+        // Fundo transparente
         background-color: transparent;
+        
+        // Cor do texto
         color: variaveis.$corTextoPrincipal;
+        
+        // Remove o estilo padrão do select
         appearance: none;
+        
+        // Altura do elemento
         height: 38px;
 
-        &:hover{
+        // ===== HOVER (MOUSE SOBRE) =====
+        // Efeito ao passar o mouse
+        &:hover {
+            // Remove efeitos padrão
             outline: none;
             box-shadow: none;
+            
+            // Cor muda para branca
             color: variaveis.$corTextoSecundario;
         }
 
+        // ===== OPTIONS (OPÇÕES DO DROPDOWN) =====
+        // Estilo das opções dentro do select
         option {
+            // Texto em cor escura (contraste com fundo escuro da opção)
             color: variaveis.$corDeFundo;
         }
     }

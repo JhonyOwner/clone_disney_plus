@@ -1,157 +1,308 @@
+// =====================================
+// MAIN.SCSS - ARQUIVO PRINCIPAL DE ESTILOS
+// =====================================
+// Este arquivo importa todos os módulos SCSS e define estilos globais
+
+// ===== IMPORTAÇÕES DE MÓDULOS SASS =====
+// Importa a funcionalidade color do Sass
 @use 'sass:color';
+
+// Importa variáveis de cores
 @use 'variaveis';
+
+// Importa estilos da seção hero
 @use 'hero';
+
+// Importa estilos da seção de filmes e séries
 @use 'shows';
+
+// Importa estilos da seção de planos
 @use 'plans';
+
+// Importa estilos da seção de dispositivos
 @use 'available_devices';
+
+// Importa estilos do FAQ
 @use 'faq';
+
+// Importa estilos do footer
 @use 'footer';
+
+// Importa estilos do header
 @use 'header';
 
+// ===== FONTES CUSTOMIZADAS =====
+// Importa fonte Avenir em peso normal (400)
 @font-face {
     font-family: Avenir;
-    src: url('../../assets/fonts/Avenir-Regular.woff2') ;
+    // Caminho para o arquivo de fonte
+    src: url('../../assets/fonts/Avenir-Regular.woff2');
+    // Peso da fonte (normal)
     font-weight: 400;
 }
 
+// Importa fonte Avenir em peso bold (700)
 @font-face {
     font-family: Avenir;
-    src: url('../../assets/fonts/Avenir-Bold.woff2') ;
+    // Caminho para o arquivo de fonte
+    src: url('../../assets/fonts/Avenir-Bold.woff2');
+    // Peso da fonte (negrito)
     font-weight: 700;
 }
 
+// ===== ESTILOS GLOBAIS =====
+// Aplicado a todos os elementos (*)
 * {
+    // Remove margens padrão
     margin: 0;
+    
+    // Remove preenchimento padrão
     padding: 0;
+    
+    // Box-sizing inclui padding e border no cálculo de largura/altura
     box-sizing: border-box;
+    
+    // Fonte aplicada globalmente
     font-family: 'Avenir', sans-serif;
+    
+    // Remove marcadores de listas
     list-style: none;
 }
 
+// ===== ESTILO DO BODY =====
+// Estilo aplicado ao corpo da página
 body {
+    // Cor de fundo da página (usa variável)
     background-color: variaveis.$corDeFundo;
 }
 
-@mixin text($fontSize: 16px){
+// ===== MIXIN: TEXT =====
+// Mixin reutilizável para estilos de texto
+// Sintaxe: @include text(tamanho)
+@mixin text($fontSize: 16px) {
+    // Define o tamanho da fonte (padrão: 16px)
     font-size: $fontSize;
+    
+    // Altura da linha (tamanho + 10px para melhor legibilidade)
     line-height: $fontSize + 10px;
+    
+    // Cor do texto (cinza/prata)
     color: variaveis.$corTextoPrincipal;
 }
 
-@mixin title($fontSize: 40px){
+// ===== MIXIN: TITLE =====
+// Mixin reutilizável para estilos de títulos
+// Sintaxe: @include title(tamanho)
+@mixin title($fontSize: 40px) {
+    // Primeiro inclui todas as propriedades do mixin text
     @include text($fontSize);
+    
+    // Sobrescreve a cor para branco
     color: variaveis.$corTextoSecundario;
 }
 
+// ===== CLASSE: TEXTO GRANDE =====
+// Classe para textos maiores (18px)
 .text--big {
     @include text(18px);
 }
 
+// ===== CLASSE: TÍTULO GRANDE =====
+// Classe para títulos grandes (40px)
 .title--big {
     @include title(44px);
 }
 
+// ===== CLASSE: TEXTO PADRÃO =====
+// Texto com tamanho padrão
 .text {
     @include text;
 }
 
+// ===== CLASSE: TÍTULO PADRÃO =====
+// Título com tamanho padrão
 .title {
     @include title;
 }
 
+// ===== CLASSE: TEXTO PEQUENO =====
+// Texto pequeno (12px)
 .text--small {
     @include text(12px);
-    
 }
 
+// ===== CLASSE: TÍTULO PEQUENO =====
+// Título pequeno (28px)
 .title--small {
     @include title(28px);
 }
 
-.link-text{
+// ===== CLASSE: LINK DE TEXTO =====
+// Links que parecem texto com sublinhado
+.link-text {
     @include text(18px);
-    color: variaveis.$corTextoSecundario;
-    text-decoration: underline;
+    color: variaveis.$corTextoSecundario; // Cor branca
+    text-decoration: underline; // Sublinhado
 }
 
+// ===== CLASSE: BOTÃO =====
+// Estilo base de todos os botões do site
 .button {
+    // Exibe em linha com itens centralizados
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    // Dimensões do botão
     width: 100%;
     height: 60px;
+    
+    // Tamanho e cor da fonte
     font-size: 18px;
     color: variaveis.$corTextoSecundario;
+    
+    // Cor de fundo do botão (roxo primário)
     background-color: variaveis.$corDeFundoBotaoPrimario;
+    
+    // Texto em maiúsculas
     text-transform: uppercase;
+    
+    // Cantos arredondados
     border-radius: 6px;
+    
+    // Cursor de apontar (indica clicabilidade)
     cursor: pointer;
+    
+    // Remove sublinhado padrão
     text-decoration: none;
+    
+    // Borda com a mesma cor do fundo
     border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+    
+    // Remove foco padrão
     outline: none;
+    
+    // Remove sombra padrão
     box-shadow: none;
+    
+    // Remove estilo padrão do navegador
     appearance: none;
+    
+    // Preenchimento interno
     padding: 8px 14px;
+    
+    // Espaço entre as letras
     letter-spacing: 1px;
 
-        &:hover {
-            background-color: color.adjust(variaveis.$corDeFundoBotaoPrimario, $lightness: 3%);
-        }
+    // ===== BOTÃO NO HOVER (MOUSE SOBRE) =====
+    // Efeito quando passa o mouse
+    &:hover {
+        // Fica um pouco mais claro
+        background-color: color.adjust(variaveis.$corDeFundoBotaoPrimario, $lightness: 3%);
+    }
 
+    // ===== BOTÃO SECUNDÁRIO =====
+    // Versão azul do botão
     &--secondary {
+        // Fundo azul
         background-color: variaveis.$corDeFundoBotaoSecundario;
         border-color: variaveis.$corDeFundoBotaoSecundario;
 
+        // ===== HOVER DO BOTÃO SECUNDÁRIO =====
         &:hover {
+            // Fica um pouco mais claro
             background-color: color.adjust(variaveis.$corDeFundoBotaoSecundario, $lightness: 3%);
         }
     }
 
+    // ===== BOTÃO ESCURO =====
+    // Versão com fundo preto/transparente
     &--dark {
+        // Fundo preto com 60% de transparência
         background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.6);
+        // Borda branca
         border-color: variaveis.$corTextoSecundario;
 
+        // ===== HOVER DO BOTÃO ESCURO =====
         &:hover {
+            // Fundo branco
             background-color: variaveis.$corTextoSecundario;
+            // Texto fica preto
             color: variaveis.$corDeFundo;
         }
     }
 }
 
+// ===== CLASSE: SEÇÃO COM IMAGEM E TEXTO =====
+// Seção com imagem e texto lado a lado
 .image-text-section {
+    // Preenchimento interno
     padding: 5.6vw;
+    
+    // Grid com 2 colunas iguais
     display: grid;
     grid-template-columns: 1fr 1fr;
+    
+    // Alinha o conteúdo verticalmente no centro
     align-items: center;
 
+    // ===== IMAGEM =====
+    // Ocupa 100% da largura disponível
     img {
         max-width: 100%;
     }
 
+    // ===== CONTAINER DE TEXTO =====
+    // Espaço com o texto
     &__text_container {
+        // Preenchimento lateral
         padding: 0 2vw;
 
+        // ===== TÍTULO =====
         h2 {
+            // Margem abaixo do título
             margin-bottom: 24px;
         }
     }
 
+    // ===== SEÇÃO COM IMAGEM EM LARGURA TOTAL =====
+    // Versão onde a imagem ocupa toda a largura
     &__image_full_width {
+        // Exibe em bloco (a imagem fica embaixo)
         display: block;
+        
+        // Position relativo para posicionar o texto sobre a imagem
         position: relative;
 
+        // ===== IMAGEM =====
         img {
+            // Ocupa 100% da largura
             width: 100%;
         }
 
+        // ===== CONTAINER DE TEXTO NA IMAGEM CHEIA =====
+        // Texto posicionado sobre a imagem
         &__text_container {
+            // Posicionamento absoluto (sobre a imagem)
             position: absolute;
+            
+            // No topo da imagem
             top: 0;
+            
+            // A 50% da distância horizontal (lado direito)
             left: 50%;
+            
+            // Ocupa toda a altura
             height: 100%;
+            
+            // Ocupa 50% da largura (menos o padding)
             width: calc(50% - 5.6vw);
+            
+            // Exibe em coluna (verticalmente)
             display: flex;
             flex-direction: column;
+            
+            // Centraliza o conteúdo verticalmente
             justify-content: center;
         }
     }

@@ -1,6 +1,25 @@
+// =====================================
+// _VARIAVEIS.SCSS - CORES E VALORES GLOBAIS
+// =====================================
+// Este arquivo contém todas as variáveis de cor usadas em todo o projeto
+// Isso permite mudanças rápidas de cores em um único lugar
+
+// ===== CORES PRINCIPAIS =====
+// Cor de fundo escuro do site (quase preto)
 $corDeFundo: #040714;
+
+// Cor de texto principal (cinza claro/prata)
 $corTextoPrincipal: silver;
+
+// Cor de texto secundária (branco)
 $corTextoSecundario: #f9f9f9f9;
+
+// ===== CORES DOS BOTÕES =====
+// Cor de fundo do botão primário (roxo)
 $corDeFundoBotaoPrimario: #6421ff;
+
+// Cor de fundo do botão secundário (azul)
 $corDeFundoBotaoSecundario: #0063e5;
+
+// Cor de fundo do botão escuro (preto)
 $corDeFundoBotaoDark: #000000;

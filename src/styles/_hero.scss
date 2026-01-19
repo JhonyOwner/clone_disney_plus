@@ -1,46 +1,98 @@
+// =====================================
+// _HERO.SCSS - ESTILOS DA SEÇÃO DESTAQUE
+// =====================================
+// Estilos para a seção hero (aquela grande no topo com fundo e conteúdo)
+
+// Importa as variáveis de cor
 @use 'variaveis';
 
+// ===== SEÇÃO HERO =====
+// A grande seção de destaque no topo do site
 .hero {
+    // Preenchimento interno (5.6% da largura da viewport)
     padding: 5.6vw;
+    
+    // Altura mínima de 80% da altura da viewport
     min-height: 80vh;
+    
+    // Imagem de fundo da seção hero
     background-image: url(../images/hero_desktop.jpeg);
+    
+    // Centraliza todo o texto
     text-align: center;
+    
+    // A imagem preenche todo o espaço disponível
     background-size: cover;
 
+    // ===== BOTÃO DENTRO DO HERO =====
+    // Estilo dos botões na seção hero
     .button {
+        // Margem acima do botão
         margin-top: 2vw;
+        
+        // Margem abaixo do botão
         margin-bottom: 8px;
     }
 
+    // ===== CONTEÚDO DO HERO =====
+    // Container principal do conteúdo
     &__content {
+        // Largura máxima para melhor legibilidade
         max-width: 640px;
         
+        // ===== BRANDING (LOGO) =====
+        // Estilo da logo do Disney+ no hero
         &__branding {
+            // Largura máxima da logo
             max-width: 320px;
+            
+            // Centraliza automaticamente (margem automática)
             margin: 0 auto 38px;
         }
 
+        // ===== TÍTULO PEQUENO =====
+        // Frase "As melhores histórias em um só lugar"
         .title--small {
+            // Margem abaixo do título
             margin-bottom: 64px;
+            
+            // Cor branca do texto
             color: #f9f9f9f9;
         }
 
+        // ===== PARÁGRAFOS =====
+        // Parágrafos de texto no hero
         p {
+            // Margem abaixo de cada parágrafo
             margin-bottom: 20px;
 
+            // ===== ÚLTIMO PARÁGRAFO =====
+            // O parágrafo final (com o desclaimer de preços)
             &:last-child {
+                // Adiciona margem no topo para espaçamento
                 margin-top: 60px;
             }
         }
 
+        // ===== COMBOS DE PLANOS =====
+        // Container para os planos (Disney+, Combo+, etc)
         &__combos {
+            // Exibe os combos em linha
             display: flex;
+            
+            // Distribui espaço entre os combos
             justify-content: space-between;
 
+            // ===== CADA COMBO =====
+            // Estilo de cada plano de assinatura
             &__combo {
+                // Cada combo ocupa 50% da largura menos 12px de espaço
                 width: calc(50% - 12px);
 
+                // ===== IMAGEM DO COMBO =====
+                // Logo do combo (Disney+, Star+, etc)
                 img {
+                    // Altura máxima de 60px
                     max-height: 60px;
                 }
             }

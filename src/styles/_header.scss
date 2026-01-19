@@ -1,49 +1,98 @@
+// =====================================
+// _HEADER.SCSS - ESTILOS DO CABEÇALHO
+// =====================================
+// Estilos para o cabeçalho (header) do site com logo e botões de ação
+
+// Importa as variáveis de cor
 @use 'variaveis';
 
+// ===== ESTILO PRINCIPAL DO HEADER =====
 .header {
+    // Position sticky faz o header ficar fixo no topo ao rolar
     position: sticky;
-    top: 0;
-    left: 0;
+    top: 0; // Fica no topo
+    left: 0; // Alinhado à esquerda
+    
+    // Cor de fundo do header (usa cor da variável)
     background-color: variaveis.$corDeFundo;
+    
+    // Transição suave de cores ao mudar background
     transition: background-color 1s ease;
+    
+    // z-index garante que o header fica acima de outros elementos
     z-index: 1;
 
+    // ===== CLASSE: HEADER OCULTO =====
+    // Quando a página está na seção hero, o header fica transparente
     &--is--hidden {
+        // Background transparente quando está no hero
         background-color: transparent;
+        // Transição suave para a mudança
         transition: background-color 1s ease;
 
+        // Logo e botão "Assine agora" ficam invisíveis
         .header {
             &__logo, &__links__item:first-child {
+                // Desaparece gradualmente (opacity)
                 opacity: 0;
+                // Fica invisível mas ainda ocupa espaço (sem display: none)
                 visibility: hidden;
+                // Transição suave de desaparecimento
                 transition: opacity 1s ease;
             }
         }
     }
 
+    // ===== CONTAINER DO HEADER =====
+    // Agrupador que organiza o conteúdo do header
     &__container {
+        // Preenchimento interno (8px em cima/baixo, 36px esquerda/direita)
         padding: 8px 36px;
+        
+        // Exibe em linha com espaço distribuído
         display: flex;
+        
+        // Coloca logo à esquerda e botões à direita
         justify-content: space-between;
     }
 
+    // ===== LOGO =====
+    // Estilo da logo do Disney+
     &__logo {
+        // Largura máxima da logo
         max-width: 80px;
+        
+        // Largura 100% para responsividade
         width: 100%;
+        
+        // Margem ao redor da logo
         margin: 5px;
+        
+        // Transição suave para opacidade (quando oculta)
         transition: opacity 1s ease;
     }
 
+    // ===== LINKS/BOTÕES DO HEADER =====
+    // Container para os botões (Assine agora, Entrar)
     &__links {
+        // Exibe os botões em linha
         display: flex;
 
+        // ===== ITEM DO LINK =====
+        // Cada botão individual
         &__item {
+            // Margem ao redor do botão
             margin: 5px;
+            
+            // Transição suave para opacidade (quando oculta)
             transition: opacity 1s ease;
         }
     }
 
+    // ===== ESTILO DO BOTÃO NO HEADER =====
+    // Botões "Assine agora" e "Entrar"
     .button {
+        // Altura do botão em pixels
         height: 50px;
     }
 }

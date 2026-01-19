@@ -1,24 +1,53 @@
+// =====================================
+// _AVAILABLE_DEVICES.SCSS - ESTILOS DOS DISPOSITIVOS
+// =====================================
+// Estilos para a seção que mostra os dispositivos compatíveis com o Disney+
+
+// ===== SEÇÃO DISPOSITIVOS DISPONÍVEIS =====
+// Container principal da seção de dispositivos
 .available_devices {
+    // Preenchimento interno (5.6% da viewport)
     padding: 5.6vw;
 
+    // ===== TÍTULO =====
+    // Título "Disponível nos seus dispositivos"
     h2 {
+        // Centraliza o título
         text-align: center;
     }
 
+    // ===== LISTA DE DISPOSITIVOS =====
+    // Grid com os dispositivos (TV, Computador, Tablet, Celular)
     &__list {
-        margin-top: 2vw; ;
+        // Margem acima da lista
+        margin-top: 2vw;
+        
+        // Exibe em grade (grid)
         display: grid;
+        
+        // Espaço entre os itens
         gap: 24px;
+        
+        // 4 colunas iguais na grade
         grid-template-columns: repeat(4, 1fr);
 
+        // ===== CADA DISPOSITIVO =====
+        // Estilo individual de cada dispositivo
         &__item {
+            // Centraliza o conteúdo
             text-align: center;
 
+            // ===== TÍTULO DO DISPOSITIVO =====
+            // Nome do dispositivo (TV, Computador, etc)
             h4 {
+                // Margem ao redor do título
                 margin: 0 20px 0 24px;
             }
 
+            // ===== IMAGEM DO DISPOSITIVO =====
+            // Ícone/imagem do dispositivo
             img {
+                // Imagem ocupa 100% da largura
                 max-width: 100%;
             }
         }

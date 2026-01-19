@@ -1,62 +1,145 @@
+// =====================================
+// _FAQ.SCSS - ESTILOS DA SEÇÃO DE PERGUNTAS E RESPOSTAS
+// =====================================
+// Estilos para o FAQ (Frequently Asked Questions) com perguntas e respostas expansíveis
+
+// ===== SEÇÃO FAQ =====
+// Container principal do FAQ
 .faq {
+    // Preenchimento interno (5.6% da viewport)
     padding: 5.6vw;
 
+    // ===== TÍTULO =====
+    // Título "Perguntas Frequentes" ou similar
     h2 {
+        // Centraliza o título
         text-align: center;
+        
+        // Margem abaixo do título
         margin-bottom: 24px;
     }
 
+    // ===== PERGUNTAS =====
+    // Container para todas as perguntas
     &__questions {
+        
+        // ===== CADA ITEM DO FAQ =====
+        // Cada pergunta e resposta
         &__item {
+            // Fundo escuro para cada item
             background-color: #13151d;
+            
+            // Espaço entre os itens
             margin-bottom: 16px;
 
+            // ===== PERGUNTA =====
+            // Texto da pergunta (clicável)
             &__question {
+                // Cor branca do texto
                 color: #fff;
+                
+                // Tamanho da fonte
                 font-size: 20px;
+                
+                // Preenchimento interno
                 padding: 24px;
+                
+                // Cada pergunta é um bloco
                 display: block;
+                
+                // Muda cursor para apontar (indica que é clicável)
                 cursor: pointer;
+                
+                // Importante para posicionar o símbolo "+"
                 position: relative;
 
+                // ===== SÍMBOLO "+" =====
+                // O símbolo de mais/menos na pergunta
                 &::after {
+                    // Conteúdo do pseudo-elemento (símbolo +)
                     content: '+';
+                    
+                    // Posição absoluta dentro da pergunta
                     position: absolute;
+                    
+                    // Alinhado ao topo
                     top: 0;
+                    
+                    // Alinhado à direita com espaço
                     right: 24px;
+                    
+                    // Ocupa toda a altura da pergunta
                     height: 100%;
+                    
+                    // Centraliza verticalmente o símbolo
                     display: flex;
                     align-items: center;
+                    
+                    // Tamanho grande do símbolo
                     font-size: 60px;
                 }
             }
 
+            // ===== RESPOSTA =====
+            // Texto da resposta (oculto inicialmente)
             &__answer {
+                // Altura 0 para ficar oculta
                 height: 0;
+                
+                // Oculta conteúdo que extrapola os limites
                 overflow: hidden;
+                
+                // Preenchimento interno (apenas lateral)
                 padding: 0 24px;
+                
+                // Transição suave ao abrir/fechar
                 transition: height, .5s ease;
 
+                // ===== LISTA NA RESPOSTA =====
+                // Lista de pontos dentro da resposta
                 ul {
+                    // Mostra marcadores (pontos)
                     list-style: disc;
+                    
+                    // Remove margem padrão
                     margin: 0;
+                    
+                    // Indentação dos pontos
                     padding-left: 24px;
                 }
 
+                // ===== MARCADOR DOS ITENS DA LISTA =====
+                // Estilo dos marcadores (pontos)
                 ul li::marker {
-                    color: #fff; 
+                    // Cor branca dos marcadores
+                    color: #fff;
+                    
+                    // Marcadores em negrito
                     font-weight: bold;
                 }
             }
 
+            // ===== ITEM ABERTO =====
+            // Quando o usuário clica e a resposta abre
             &--is--open {
+                
+                // ===== PERGUNTA ABERTA =====
+                // Quando está aberta, o símbolo muda
                 .faq__questions__item__question::after {
+                    // Muda de "+" para "-"
                     content: '-';
                 }
 
+                // ===== RESPOSTA ABERTA =====
+                // A resposta fica visível
                 .faq__questions__item__answer {
+                    // Altura automática para mostrar o conteúdo
                     height: auto;
+                    
+                    // Preenchimento abaixo da resposta
                     padding-bottom: 24px;
+                    
+                    // Transição suave
                     transition: height, .5s ease;
                 }
             }
