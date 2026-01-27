@@ -31,6 +31,15 @@
         // 4 colunas iguais na grade
         grid-template-columns: repeat(4, 1fr);
 
+
+        @media (max-width: 768px) {
+            // Em telas menores, exibe 2 colunas
+            display: grid;
+            transform: scale(0.9);
+            justify-content: center;
+            grid-template-columns: 1fr 1fr;
+        }
+
         // ===== CADA DISPOSITIVO =====
         // Estilo individual de cada dispositivo
         &__item {

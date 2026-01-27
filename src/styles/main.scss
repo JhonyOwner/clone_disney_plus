@@ -105,36 +105,60 @@ body {
 // Classe para textos maiores (18px)
 .text--big {
     @include text(18px);
+
+    @media (max-width: 768px) {
+        @include text (15px);
+    }
 }
 
 // ===== CLASSE: TÍTULO GRANDE =====
 // Classe para títulos grandes (40px)
 .title--big {
     @include title(44px);
+
+    @media (max-width: 768px) {
+        @include title (26px);
+    }
 }
 
 // ===== CLASSE: TEXTO PADRÃO =====
 // Texto com tamanho padrão
 .text {
     @include text;
+
+    @media (max-width: 768px) {
+        @include title (14px);
+    }
 }
 
 // ===== CLASSE: TÍTULO PADRÃO =====
 // Título com tamanho padrão
 .title {
     @include title;
+
+    @media (max-width: 768px) {
+        @include title (24px);
+    }
 }
 
 // ===== CLASSE: TEXTO PEQUENO =====
 // Texto pequeno (12px)
 .text--small {
     @include text(12px);
+
+    @media (max-width: 768px) {
+        @include text (11px);
+    }
 }
 
 // ===== CLASSE: TÍTULO PEQUENO =====
 // Título pequeno (28px)
 .title--small {
     @include title(28px);
+
+    @media (max-width: 768px) {
+        @include title (22px);
+    }
 }
 
 // ===== CLASSE: LINK DE TEXTO =====
@@ -246,6 +270,10 @@ body {
     // Alinha o conteúdo verticalmente no centro
     align-items: center;
 
+    @media (max-width: 768px) {
+        display: block;
+    }
+
     // ===== IMAGEM =====
     // Ocupa 100% da largura disponível
     img {
@@ -304,6 +332,12 @@ body {
             
             // Centraliza o conteúdo verticalmente
             justify-content: center;
+
+            @media (max-width: 768px) {
+                position: relative;;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }

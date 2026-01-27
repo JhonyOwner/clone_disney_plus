@@ -125,3 +125,4 @@ function esconderTodasAbas() {
         // Remove a classe que exibe a aba, ocultando-a
         tabsContainer[i].classList.remove("shows__list--is--active");
     }
+}

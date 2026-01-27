@@ -30,6 +30,11 @@
         // Margem acima da lista de filmes
         margin-top: 44px;
 
+        @media (max-width: 768px) {
+            // Em telas menores, usa 2 colunas
+            grid-template-columns: 1fr 1fr;
+        }
+
         // ===== LISTA ATIVA =====
         // Quando a aba está selecionada, exibe os filmes
         &--is--active {
@@ -60,6 +65,12 @@
         
         // Centraliza os botões na tela
         justify-content: center;
+
+        @media (max-width: 768px) {
+            white-space: nowrap;
+            overflow-x: scroll;
+            padding-left: 20px;
+        }
 
         // ===== BOTÃO DE ABA =====
         // Cada botão individual (Em breve, Populares, etc)
@@ -97,6 +108,10 @@
                 // Adiciona uma borda branca na parte inferior
                 // Indicando que a aba está selecionada
                 border-color: variaveis.$corTextoSecundario;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 16px;
             }
         }
     }

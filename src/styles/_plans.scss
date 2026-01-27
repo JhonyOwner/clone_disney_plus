@@ -28,6 +28,14 @@
         // Margem no topo da lista
         margin-top: 50px;
 
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        .button {
+            margin-top: 24px;
+        }
+
         // ===== CADA PLANO =====
         // Estilo individual de cada plano
         &__item {

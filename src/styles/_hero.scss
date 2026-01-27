@@ -24,6 +24,14 @@
     // A imagem preenche todo o espaço disponível
     background-size: cover;
 
+    @media (max-width: 768px) {
+        background-image: url(../images/hero_celular.jpeg);
+        padding-top: calc(50vw + 50px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: -55px;
+        }
+
     // ===== BOTÃO DENTRO DO HERO =====
     // Estilo dos botões na seção hero
     .button {
@@ -48,6 +56,10 @@
             
             // Centraliza automaticamente (margem automática)
             margin: 0 auto 38px;
+
+            @media (max-width: 768px) {
+                max-width: 180px;
+            }
         }
 
         // ===== TÍTULO PEQUENO =====
@@ -83,11 +95,20 @@
             // Distribui espaço entre os combos
             justify-content: space-between;
 
+            @media (max-width: 480px) {
+                display: block;
+            }
+
             // ===== CADA COMBO =====
             // Estilo de cada plano de assinatura
             &__combo {
                 // Cada combo ocupa 50% da largura menos 12px de espaço
                 width: calc(50% - 12px);
+
+                @media (max-width: 480px) {
+                    width: 100%;
+                    margin-bottom: 50px;
+                }
 
                 // ===== IMAGEM DO COMBO =====
                 // Logo do combo (Disney+, Star+, etc)

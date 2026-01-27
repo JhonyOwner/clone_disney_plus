@@ -17,7 +17,7 @@
     background-color: variaveis.$corDeFundo;
     
     // Transição suave de cores ao mudar background
-    transition: background-color 1s ease;
+    transition: background-color 2s ease;
     
     // z-index garante que o header fica acima de outros elementos
     z-index: 1;
@@ -54,6 +54,11 @@
         
         // Coloca logo à esquerda e botões à direita
         justify-content: space-between;
+
+        @media (max-width: 768px) {
+                padding: 0 12px 0 20px;
+                justify-content: space-evenly;
+            }
     }
 
     // ===== LOGO =====
@@ -70,6 +75,10 @@
         
         // Transição suave para opacidade (quando oculta)
         transition: opacity 1s ease;
+
+                @media (max-width: 768px) {
+                    max-width: 72px;
+                }
     }
 
     // ===== LINKS/BOTÕES DO HEADER =====
@@ -94,6 +103,12 @@
     .button {
         // Altura do botão em pixels
         height: 50px;
+
+            @media (max-width: 768px) {
+                font-size: 13px;
+                padding: 8px 11px;
+                height: 40px;
+                letter-spacing: 0;
+        }
     }
 }
-
