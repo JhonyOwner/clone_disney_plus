@@ -15,6 +15,15 @@ const cleanCSS = require('gulp-clean-css');
 // Importa gulp-imagemin para otimizar e comprimir imagens
 const imagemin = require('gulp-imagemin');
 
+const uglify = require('gulp-uglify');
+
+
+function scripts() {
+    return gulp.src('./src/scripts/*.js') // Busca todos os arquivos JS
+        .pipe(uglify()) // Minifica o JS
+        .pipe(gulp.dest('./dist/js')); // Salva em dist/js
+}
+
 // ===== FUNÇÃO STYLES =====
 // Compila SCSS em CSS e minifica
 // Esta função:
@@ -46,7 +55,7 @@ function images() {
 // Executa styles e images em paralelo
 // Comando: npm run build
 // Ambas as funções rodam ao mesmo tempo
-exports.default = gulp.parallel(styles, images);
+exports.default = gulp.parallel(styles, images, scripts);
 
 // ===== EXPORTAR COMANDO WATCH =====
 // Fica observando mudanças nos arquivos SCSS
@@ -55,4 +64,5 @@ exports.default = gulp.parallel(styles, images);
 exports.watch = function() {
     // Monitora todos os arquivos SCSS e recompila quando há mudanças
     gulp.watch('./src/styles/*.scss', gulp.parallel(styles))
+    gulp.watch('./src/scripts/*.js', gulp.parallel(scripts))
 }
